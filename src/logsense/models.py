@@ -42,3 +42,14 @@ class LogEvent:
             unit=entry.get("_SYSTEMD_UNIT"),
             message=entry.get("MESSAGE", ""),
         )
+
+@dataclass
+class Finding:
+    signature: str
+    severity: str
+    impact: str
+    timestamp: int
+    source: str
+    pid: int | None
+    unit: str | None
+    message: str

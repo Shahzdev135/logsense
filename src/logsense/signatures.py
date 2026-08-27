@@ -30,7 +30,18 @@ KERNEL_OOM = Signature(
     ],
 )
 
+DNS_DEGRADED = Signature(
+    name="dns_degraded",
+    description="systemd-resolved fell back to a degraded DNS feature set",
+    severity="WARNING",
+    impact="LOW",
+    patterns=[
+        "using degraded feature set",
+    ],
+)
+
 SIGNATURES = [
     KERNEL_PANIC,
     KERNEL_OOM,
+    DNS_DEGRADED,
 ]
